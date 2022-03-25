@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nacionalidade</title>
-</head>
-<body>
-    <h1>Qual a sua Nacionalidade?</h1>
-    <input type="text" placeholder="Digite seu país" id="pais">
-    <button onclick="analisar()">Verificar</button>
-    <div id="usuario"></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nacionalidade</title>
+    </head>
+    <body>
+        <h1>Qual a sua Nacionalidade?</h1>
+        <input type="text" placeholder="Digite seu país" id="pais">
+        <button onclick="analisar()">Verificar</button>
+        <div id="usuario"></div>
 
-    <script>
-        function analisar() {
-            var usuario = document.querySelector('div#usuario')
+        <script>
+            function analisar() {
+                var inputPais = document.querySelector('input#pais') //variável do input
+                var usuario = document.querySelector('div#usuario') //variável do resultado do input
+                var valueInputPais = inputPais.value //guardar valor do input
+                var lowercaseValueInputPais = valueInputPais.toLowerCase()
 
-            var inputPais = document.querySelector('input#pais')
-            var valueInputPais = inputPais.value
-            var lowercaseValueInputPais = valueInputPais.toLowerCase()
+                usuario.innerHTML = `<p>Você é de ${valueInputPais}</p>`
 
-            usuario.innerHTML = `<p>Você é de ${valueInputPais}</p>`
+                if (lowercaseValueInputPais == "brasil") {
+                    usuario.innerHTML += `<p>Portanto você é <strong>Brasileiro!</strong></p>`
 
-           if (lowercaseValueInputPais == "brasil") {
-               usuario.innerHTML += `<p>Portanto você é <strong>Brasileiro!</strong></p>`
-           } else {
-               usuario.innerHTML += `<p>Entretanto você é <strong>Estrangeiro!</strong><p>`
-           }
-        }
-    </script>
-</body>
+                } else {
+                    usuario.innerHTML += `<p>Entretanto você é <strong>Estrangeiro!</strong><p>`
+                }
+            }
+        </script>
+    </body>
 </html>
