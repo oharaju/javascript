@@ -1,5 +1,7 @@
-var agora = new Date()
-var hora = agora.getHours() //Pega o horário atual do sistema
+var agora = new Date();
+var hora = agora.getHours(); //Pega o horário atual do sistema
+
+console.log(`Agora são ${hora}h`)
 
 //Condições Aninhadas
 if (hora <= 4) {
