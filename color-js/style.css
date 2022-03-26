@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.box {
+  background-color: #7ecdec;
+  width: 200px;
+  height: 200px;
+  margin: 30px;
+}
+
+.color {
+  background-color: rgb(173, 105, 162);
+}
+
+.button {
+  background-color:#376fe9;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin: 10px;
+}
