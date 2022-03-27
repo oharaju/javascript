@@ -1,0 +1,53 @@
+header {
+  margin: 20px;
+}
+
+.button {
+  font-size: 15px;
+  color: #ffffff;
+  background-color: #d8385e;
+  border: 1px solid #d8385e;
+  border-radius: 20px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.button:hover {
+  box-shadow: 0 0 1em #d8385e;
+}
+
+.button-reverse {
+  font-size: 15px;
+  color: #d8385e;
+  background-color: transparent;
+  border: 1px solid #d8385e;
+  border-radius: 20px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.button-reverse:hover {
+  background-color: #d8385e;
+  color: #ffffff;
+  box-shadow: 0 0 1em #d8385e;
+}
+
+nav {
+  background-color: #ddc6c9;
+  transition: all 0.5s;
+  transform: translateX(100%);
+}
+
+.menu-toggle {
+  transform: translateX(0);
+}
+
+.list {
+  line-height: 40px;
+  padding: 20px;
+}
+
+.list-item {
+  text-decoration: none;
+  color: #830a26;
+}
