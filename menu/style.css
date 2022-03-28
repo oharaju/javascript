@@ -1,5 +1,12 @@
 header {
-  margin: 20px;
+  background-color:#f5dce2
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
 }
 
 .button {
@@ -38,10 +45,6 @@ nav {
   transform: translateX(100%);
 }
 
-.menu-toggle {
-  transform: translateX(0);
-}
-
 .list {
   line-height: 40px;
   padding: 20px;
@@ -49,5 +52,9 @@ nav {
 
 .list-item {
   text-decoration: none;
-  color: #830a26;
+  color: #ad0d32;
+}
+
+.menu-toggle {
+  transform: translateX(0);
 }
