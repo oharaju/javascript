@@ -1,0 +1,24 @@
+
+
+body {
+  background-color: rgb(238, 185, 164);
+  font:normal 15px Arial;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+div {
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding: 15px;
+  width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
