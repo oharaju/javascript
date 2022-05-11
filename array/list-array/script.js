@@ -34,7 +34,7 @@ function handleSubmit() {
 button.addEventListener("click", function(e) {
   e.preventDefault();
 
-  handleSubmit();
+  handleSubmit
 });
 
 generateList();
