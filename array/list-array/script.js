@@ -1,6 +1,8 @@
 
 let nomes = ['Júlia', 'Caio', 'Juninho', 'João'];
-const button = document.querySelector("button");
+const buttonAdd = document.querySelector(".buttonAdd");
+const buttonRemove = document.querySelector(".buttonRemove");
+const input = document.querySelector('.input');
 
 function generateList() {
   const lista = document.querySelector('ul.lista');
@@ -16,25 +18,31 @@ function removeItems() {
 }
 
 function clearInput() {
-  const input = document.querySelector('input.input');
   input.value = "";
 }
 
-function handleSubmit() {
-  const input = document.querySelector('input.input');
+function addNewItem() {
   const valueInput = input.value;
-
   nomes.push(valueInput);
+}
 
-  clearInput()
+function handleSubmit() {
+  addNewItem();
+  clearInput();
   removeItems();
   generateList();
 }
 
-button.addEventListener("click", function(e) {
+buttonAdd.addEventListener("click", function(e) {
   e.preventDefault();
 
-  handleSubmit
+  if (input.value.length > 0) {
+    handleSubmit();
+  }
+});
+
+buttonRemove.addEventListener("click", function() {
+  removeItems();
 });
 
 generateList();
