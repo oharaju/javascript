@@ -1,48 +1,51 @@
 let alunos = [];
-const button = document.querySelector("button");
+const inputNome = document.querySelector('.nome');
+const inputNota = document.querySelector('.nota');
+const buttonAdd = document.querySelector(".buttonAdd");
+const lista = document.querySelector('.lista');
 
 function generateList() {
-  const lista = document.querySelector('.lista');
-
   for (let i = 0; i < alunos.length; i++) {
-    const text = ("Nome: " + `${alunos[i].nome}` + " Nota: " + `${alunos[i].nota} `)
+    const aluno = alunos[i];
+    const text = ("Nome: " + `${aluno.nome}` + " Nota: " + `${aluno.nota}`);
 
     const item = document.createElement('li');
     item.appendChild(document.createTextNode(text));
     lista.appendChild(item);
   }
-
 }
 
-
-function clearInput() { //Limpar input assim que submeter
-  document.querySelector('.nome').value = "";
-  document.querySelector('.nota').value = "";
+function clearInput() {
+  inputNome.value = "";
+  inputNota.value = "";
 }
-
 
 function removeItems() {
-  document.querySelector('.lista').innerHTML = "";
+  lista.innerHTML = "";
 }
 
-function handleSubmit() {
-  const nomeAluno = document.querySelector('.nome').value;
-  const notaAluno = document.querySelector('.nota').value;
+function addItem() {
+  const nomeAluno = inputNome.value;
+  const notaAluno = inputNota.value;
 
-  const notas = {
+  const aluno = {
     nome: nomeAluno,
     nota: notaAluno
   }
-
-  alunos.push(notas)
-
-
-  clearInput()
-  removeItems()
-  generateList()
+  alunos.push(aluno)
 }
 
+function handleSubmit() {
+  addItem();
+  clearInput();
+  removeItems();
+  generateList();
+}
 
-button.addEventListener("click", function(e) {
+buttonAdd.addEventListener("click", function(e) {
   e.preventDefault();
+  
+  if(inputNome.value.length > 0 && inputNota.value.length > 0) {
+    handleSubmit();
+  }
 });
