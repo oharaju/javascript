@@ -4,16 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alunos</title>
+    <title>Notas de Alunos</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 10px;
+      }
+    </style>
   </head>
-  <br>
     <h1>Notas de Alunos</h1>
-    <labeL>NOME:</labeL>
-    <input type="text" class="nome"></input><br></br>
-    <label>NOTAS:</label>
-    <input type="number" class="nota"></input><br></br>
-    <button type="submit" onclick="add()">Adicionar</button>
-    <div class="resultado"></div>
+    <div class="container">
+      <div>
+        <labeL>NOME:</labeL>
+        <input type="text" class="nome">
+      </div>
+      <div>
+        <label>NOTAS:</label>
+        <input type="number" class="nota">
+      </div>
+   </div>
+    <button type="submit" class="buttonAdd">Adicionar</button>
+    <ul class="lista"></ul>
     <script src="./script.js"></script>
   </body>
 </html>

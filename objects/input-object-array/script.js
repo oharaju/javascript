@@ -1,22 +1,51 @@
 let alunos = [];
+const inputNome = document.querySelector('.nome');
+const inputNota = document.querySelector('.nota');
+const buttonAdd = document.querySelector(".buttonAdd");
+const lista = document.querySelector('.lista');
 
-function add(){
-  const nomeAluno = document.querySelector('.nome').value;
-  const notaAluno = document.querySelector('.nota').value;
-  const resultado = document.querySelector('.resultado');
+function generateList() {
+  for (let i = 0; i < alunos.length; i++) {
+    const aluno = alunos[i];
+    const text = ("Nome: " + `${aluno.nome}` + " Nota: " + `${aluno.nota}`);
 
-  const dados = {
+    const item = document.createElement('li');
+    item.appendChild(document.createTextNode(text));
+    lista.appendChild(item);
+  }
+}
+
+function clearInput() {
+  inputNome.value = "";
+  inputNota.value = "";
+}
+
+function removeItems() {
+  lista.innerHTML = "";
+}
+
+function addItem() {
+  const nomeAluno = inputNome.value;
+  const notaAluno = inputNota.value;
+
+  const aluno = {
     nome: nomeAluno,
     nota: notaAluno
   }
-  alunos.push(dados)
-
-  clearInput()
-  resultado.innerHTML += ('O aluno ' + dados.nome + " ficou com a nota " + dados.nota)
-
+  alunos.push(aluno)
 }
 
-function clearInput() { //Limpar input assim que submeter
-  document.querySelector('.nome').value = "";
-  document.querySelector('.nota').value = "";
+function handleSubmit() {
+  addItem();
+  clearInput();
+  removeItems();
+  generateList();
 }
+
+buttonAdd.addEventListener("click", function(e) {
+  e.preventDefault();
+  
+  if(inputNome.value.length > 0 && inputNota.value.length > 0) {
+    handleSubmit();
+  }
+});
